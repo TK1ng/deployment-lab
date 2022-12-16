@@ -23,7 +23,7 @@ app.get('/roll', (req, res) => {
         nonExistent();
         res.status(200).send(res.data);
     } catch (err) {
-        res.status(400);
+        res.status(400).send(err);
         console.log(err)
         rollbar.critical('This function is undefined');
     }
